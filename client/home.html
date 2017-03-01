@@ -1,0 +1,36 @@
+<body>
+  <header style="text-align:center;">
+    <h1>Gif Maker Test | Choose files and Specs</h1>
+  </header>
+  <div class="container_main">
+    <div id="container_import" style="display:flex;justify-content:space-around;">
+    {{> gifmaker}}
+    </div>
+    <div id="container_specs" style="display:flex;justify-content:space-around;margin-top:15px;">
+      <label name="spec1">milliseconds</label> 
+      <input id="milliseconds" type="number" value="1" />
+      <label name="spec2">text</label> 
+      <input id="text" type="text" placeholder="write text here" />
+      <label name="spec3">width</label> 
+      <input id="gifWidth" type="number" value="300"/>
+      <label name="spec4">height</label> 
+      <input id="gifHeight" type="number" value="300"/>
+    </div>
+    <div id="container_importedPics" style="display:flex;justify-content:space-around;margin-top:15px;">
+    </div>
+    {{> gifButton}}
+    <div id="resultGif" style="width:80%;margin:auto;text-align:center;margin-top:20px;display:flex;flex-direction:column;">
+    </div>      
+  </div>
+</body>
+<template name="gifmaker">
+  <div style="text-align:center">
+    <input type="file" class="picInputs" style="padding:0px;border:solid black 1px;width:77px;height:77px;background-color:black;font:black;border-radius:10px;"/>
+    <p>or drag</p>
+  </div>
+</template>
+<template name="gifButton">
+  <div style="text-align:center;">
+      <button id="createGif" style="width:60vw; margin-top:15px;"> Create Gif </button>
+  </div>
+</template>
