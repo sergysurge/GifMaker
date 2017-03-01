@@ -32,12 +32,15 @@ Template.gifButton.events({
           //create the image 
           var image = obj.image, animatedImage = document.createElement('img');
           animatedImage.src = image;
+          animatedImage.style.width = document.getElementById('gifWidth').value;
+          animatedImage.style.height = document.getElementById('gifHeight').value;
+          animatedImage.style.margin = 'auto'
           document.getElementById('resultGif').append(animatedImage);
           //create the link to download
           var imageLink = document.createElement('a');
-          imageLink.href = image
-          imageLink.download = 'sergey_sarkisyan'
-          imageLink.innerText = 'click here to download your gif!'
+          imageLink.href = image;
+          imageLink.download = 'sergey_sarkisyan';
+          imageLink.innerText = 'click here to download your gif!';
           document.getElementById('resultGif').append(imageLink);
       }
   });
@@ -45,7 +48,7 @@ Template.gifButton.events({
   //clean out the array of imported pictures
   gifPics = []
   //clean out the input's on submit, no file should be referenced
-  var picInputs = document.getElementsByClassName('picInputs')
+  var picInputs = document.getElementsByClassName('picInputs');
     for (var i = 0 ; i < picInputs.length; i++) {
       picInputs[i].value = ''
     }
